@@ -6,6 +6,8 @@
 //  Copyright © 2017年 liwangqiang. All rights reserved.
 //
 
+static NSString* const NotificationContants_Advertise_Key=@"AdvertisePush";
+
 #import "LWQAdvertiseView.h"
 
 @interface LWQAdvertiseView ()

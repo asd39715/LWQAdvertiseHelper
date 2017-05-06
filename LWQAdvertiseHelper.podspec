@@ -3,7 +3,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "LWQAdvertiseHelper"
-  s.version      = "0.0.3"
+  s.version      = "0.0.6"
   s.summary      = "启动广告管理."
 
   s.homepage     = "https://github.com/asd39715/LWQAdvertiseHelper.git"
@@ -14,7 +14,7 @@ Pod::Spec.new do |s|
 
   s.platform     = :ios, "7.0"
 
-  s.source       = { :git => "https://github.com/asd39715/LWQAdvertiseHelper.git", :tag => "0.0.3" }
+  s.source       = { :git => "https://github.com/asd39715/LWQAdvertiseHelper.git", :tag => "0.0.6" }
 
   s.source_files  = "Classes/**/*"
 
