@@ -22,4 +22,7 @@ static NSString *const adImageName = @"adImageName";
 /** 图片路径*/
 @property (nonatomic, copy) NSString *filePath;
 
+/** 设置广告显示的时间，默认为3秒*/
+- (void)setShowTime:(int)showTime;
+
 @end

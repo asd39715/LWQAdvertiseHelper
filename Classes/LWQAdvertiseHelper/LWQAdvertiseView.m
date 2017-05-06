@@ -6,8 +6,6 @@
 //  Copyright © 2017年 liwangqiang. All rights reserved.
 //
 
-static NSString* const NotificationContants_Advertise_Key=@"AdvertisePush";
-
 #import "LWQAdvertiseView.h"
 
 @interface LWQAdvertiseView ()
@@ -18,7 +16,7 @@ static NSString* const NotificationContants_Advertise_Key=@"AdvertisePush";
 @end
 
 //广告显示的时间
-static int const showtime = 3;
+static int showtime = 3.f;
 
 @implementation LWQAdvertiseView
 
@@ -31,6 +29,15 @@ static int const showtime = 3;
                                                       repeats:YES];
     }
     return _countTimer;
+}
+
+/** 设置广告显示的时间，默认为3秒*/
+- (void)setShowTime:(int)showTime{
+    if (showTime>0) {
+        showtime = showTime;
+    }
+    [_countBtn setTitle:[NSString stringWithFormat:@"跳过%d", showtime]
+               forState:UIControlStateNormal];
 }
 
 - (instancetype)initWithFrame:(CGRect)frame{
@@ -49,7 +56,6 @@ static int const showtime = 3;
         CGFloat btnH = 30;
         _countBtn = [[UIButton alloc] initWithFrame:CGRectMake(kAdscreenWidth - btnW - 24, btnH, btnW, btnH)];
         [_countBtn addTarget:self action:@selector(dismiss) forControlEvents:UIControlEventTouchUpInside];
-        [_countBtn setTitle:[NSString stringWithFormat:@"跳过%d", showtime] forState:UIControlStateNormal];
         _countBtn.titleLabel.font = [UIFont systemFontOfSize:15];
         [_countBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         _countBtn.backgroundColor = [UIColor colorWithRed:38 /255.0 green:38 /255.0 blue:38 /255.0 alpha:0.6];

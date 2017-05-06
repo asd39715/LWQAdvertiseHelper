@@ -20,7 +20,8 @@
     return instance;
 }
 
-+(void)showAdvertiserView:(NSArray *)imageArray{
++(void)showAdvertiserView:(NSArray *)imageArray
+                 showTime:(int)showTime{
     // 1.判断沙盒中是否存在广告图片，如果存在，直接显示
     NSString *filePath = [[LWQAdvertiseHelper sharedInstance] getFilePathWithImageName:[kAdUserDefaults valueForKey:adImageName]];
     
@@ -28,11 +29,13 @@
     if (isExist) {// 图片存在
         LWQAdvertiseView *advertiseView = [[LWQAdvertiseView alloc] initWithFrame:kAdMain_Screen_Bounds];
         advertiseView.filePath = filePath;
+        [advertiseView setShowTime:showTime];
         [advertiseView show];
     }
     // 2.无论沙盒中是否存在广告图片，都需要重新调用广告接口，判断广告是否更新
     [[LWQAdvertiseHelper sharedInstance] getAdvertisingImage:imageArray];
 }
+
 
 /**
  *  初始化广告页面

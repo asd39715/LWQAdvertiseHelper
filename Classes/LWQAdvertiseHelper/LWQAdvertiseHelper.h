@@ -12,6 +12,7 @@
 
 + (instancetype)sharedInstance;
 
-+(void)showAdvertiserView:(NSArray *)imageArray;
++(void)showAdvertiserView:(NSArray *)imageArray
+                 showTime:(int)showTime;
 
 @end
